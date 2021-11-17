@@ -12,7 +12,6 @@ public class Animal implements Flying{
         else return "лет";
     }
 
-
     public String getName() {
         return name;
     }
@@ -61,12 +60,12 @@ public class Animal implements Flying{
         System.out.println("Я ем");
     }
 
+    public String toString() {
+        return "\"Привет! меня зовут " + name + ", мне " + age + " " + years() + ", я вешу - " + weight + " кг, мой цвет - " + color + "\"";
+    }
+
     @Override
     public void fly() {
         System.out.println("Я лечу");
-    }
-
-    public String toString() {
-        return "\"Привет! меня зовут " + name + ", мне " + age + " " + years() + ", я вешу - " + weight + " кг, мой цвет - " + color + "\"";
     }
 }
