@@ -1,14 +1,15 @@
 package com.otus.shatalov;
 
-public class Animal implements Flying{
+public abstract class Animal {
     protected String name;
     protected int age;
     protected int weight;
     protected String color;
 
     private String years() {
-        if (this.age == 1) return "год";
-        else if (this.age > 1 & this.age < 5) return "года";
+        int lastChar = this.age % 10;
+        if ((lastChar == 1) && !(this.age == 11)) return "год";
+        else if ((this.age > 1 & this.age < 5) || (lastChar > 1 && lastChar < 5) && !(this.age < 21)) return "года";
         else return "лет";
     }
 
@@ -64,8 +65,4 @@ public class Animal implements Flying{
         return "\"Привет! меня зовут " + name + ", мне " + age + " " + years() + ", я вешу - " + weight + " кг, мой цвет - " + color + "\"";
     }
 
-    @Override
-    public void fly() {
-        System.out.println("Я лечу");
-    }
 }

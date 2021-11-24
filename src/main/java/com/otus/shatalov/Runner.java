@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
+
 public class Runner {
     public static void main(String[] args) {
 
@@ -38,14 +39,14 @@ public class Runner {
                         animal = new Duck();
                         menu.addAnimal(animal);
                         animals.add(animal);
-                        animal.fly();
+                        ((Duck)animal).fly();
                     } else {
                         System.out.println("Сделайте выбор заново! Выбирать можно только cat / dog / duck");
                     }
                     break;
                 case "list":
                     System.out.println("Список всех животных");
-                    menu.animalsList(animals);
+                    menu.getAnimalsList(animals);
                     break;
                 case "exit":
                     System.out.println("Выход");
